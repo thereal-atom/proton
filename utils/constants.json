@@ -1,0 +1,59 @@
+{   
+    "__config": {
+        "prefix": "$"
+    },
+    "__baseurl": {
+        "general": {
+            "charts": "https://quickchart.io/",
+            "apis": "https://api.publicapis.org/",
+            "rand_data": "https://random-data-api.com/",
+            "scraping": "https://www.scraperapi.com/",
+            "graphs": "https://documentation.image-charts.com/",
+            "unix_converter": "https://unixtime.co.za/"
+        },
+        "fun": {
+            "trivia": "https://jservice.io/",
+            "quote": "https://api.quotable.io"
+        },
+        "stocks": {
+            "crypto_market_data": "https://binance-docs.github.io/apidocs/spot/en/"
+        },
+        "science": {
+            "nasa": {
+                "url1": "https://api.nasa.gov",
+                "url2": "https://images-api.nasa.gov",
+                "key": "SyKAHDQly0RHmE746eSJ3LbVedZrzNsf0ULGfjbo"
+            },
+            "spacex": ""
+        },
+        "misc": {
+            "qr": "https://image-charts.com"
+        }
+    },
+    "__objects": {
+        "setupObj": {
+            "prefix": "$",
+            "levels": [{
+                "xpToLevelUp": 100,
+                "level": 1
+            },{
+                "xpToLevelUp": 250,
+                "level": 2
+            },{
+                "xpToLevelUp": 500,
+                "level": 3
+            }]
+        }
+    },
+    "__emojis": {
+        "text": "<:atomtext:846008948225212446>",
+        "tick": "<:atomtick:846008948229799946>",
+        "cross": "<:atomcross:846008948318666772>"
+    },
+    "__colors": {
+        "moderation": "#03fc9d",
+        "error": "#ff5454",
+        "misc": "#03fcec",
+        "fun": "#c7ffeb"
+    }
+}
