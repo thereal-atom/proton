@@ -1,0 +1,11 @@
+{
+    "__api":{
+        "alphaVantage":{
+            "base": "https://www.alphavantage.co",
+            "apiKey": "RIVDVAYE08V5MZR7"
+        },
+        "binance": {
+            "base": "https://api.binance.com"
+        }
+    }
+}
