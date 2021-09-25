@@ -12,7 +12,7 @@ module.exports = {
             .setImage(user.displayAvatarURL({dynamic: true, size: 256}))
             .setColor(client.constants.__colors.misc)
             .setFooter(`${user.tag}'s avatar`)
-        message.channel.send(embed);
+        message.channel.send({embeds: [embed]});
     },
     slash: {
         options: [{

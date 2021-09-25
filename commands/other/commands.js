@@ -6,11 +6,11 @@ module.exports = {
     description: "List all of protons commands",
     usage: "commands",
     run: (message, args, client) => {
-        const commandsArray = client.commands.map(command => `\`${command.name}\``);
+        const commandsArray = client.commandsArray.map(command => `\`${command.name}\``);
         const embed = new MessageEmbed()
             .setAuthor("Proton", client.user.displayAvatarURL())
             .setTitle("Proton Commands")
             .setDescription(commandsArray.join(", "))
-        message.channel.send(embed);
+        message.channel.send({embeds: [embed]});
     }
 }

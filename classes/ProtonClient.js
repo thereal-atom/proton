@@ -10,15 +10,14 @@ const commandFolders = fs.readdirSync('./commands');
 class ProtonClient extends Client {
     constructor(props){
         super(props);
-        // this.commands = new Collection();
-
+        
         this.constants = constants;
         this.commandsArray = [];
-        this.successful = { "evts": [], "cmds": [], "modules": [] };
 
         this.LoadEvents();
         this.ConnectToMongoDb();
     }
+    //Connect to database
     async ConnectToMongoDb(){
         await mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true }).then(async mongoose => {
             console.log("Database connection established.");
@@ -29,6 +28,7 @@ class ProtonClient extends Client {
         mongoose.Promise = global.Promise;
         return mongoose 
     };
+    //Load standard commands
     LoadCommands() {
         commandFolders.forEach(folder => {
             const commandFiles = fs.readdirSync(`./commands/${folder}`).filter(file => file.endsWith('.js'));
@@ -43,6 +43,7 @@ class ProtonClient extends Client {
             })
         });
     };
+    //Load events
     LoadEvents(){
         eventFiles.forEach(file => {
             const event = require(`../events/${file}`);
@@ -50,6 +51,7 @@ class ProtonClient extends Client {
             } else {this.on(event.name, (...args) => event.execute(...args, this));}
         });
     };
+    //Loading slash commands
     LoadSlashCommands(){
         const guild = this.guilds.cache.get("787410312499953685");
         let commands;
@@ -59,14 +61,12 @@ class ProtonClient extends Client {
             commands = this.application?.commands
         }
         this.commands=commands;
-        // commands?.create({
-        //     name: "ping",
-        //     description: "Reply with pong"
-        // })
     }
+    //Sending errors
     _throw(type, text, message, error){
         errors.throwErr(type, text, message, this, error);
     };
+    //Start bot
     start(token){
         this.login(token);
     };

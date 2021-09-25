@@ -4,6 +4,6 @@ const throwErr = (type, text, message, client, error) => {
     const embed = new Discord.MessageEmbed()
         .setColor(client.constants.__colors.error)
         .setTitle(`${client.constants.__emojis.cross} ${text}`)
-    return message.channel.send(embed);
+    return message.channel.send({embeds: [embed]});
 }
 module.exports = { throwErr };
