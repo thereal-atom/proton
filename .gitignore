@@ -2,4 +2,8 @@ node_modules/
 *.env
 .env
 .env.test
+<<<<<<< HEAD
 .env.production
+=======
+.env.production
+>>>>>>> 9119cf04dd34a26a2870cfae7a0b161f9345f4ac
